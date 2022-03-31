@@ -118,7 +118,7 @@ export default {
 <template>
   <section class="todoapp">
     <header class="header">
-      <h1>todos</h1>
+      <h1>To-Dos</h1>
       <input
         class="new-todo"
         autofocus
