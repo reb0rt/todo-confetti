@@ -18,8 +18,7 @@ export default {
     todos: JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'),
     lastLength: 0,
     editedTodo: null,
-    visibility: 'all',
-    confetti: 1000,
+    visibility: 'all'
   }),
 
   // watch todos change for localStorage persistence
@@ -30,7 +29,7 @@ export default {
           this.$confetti.start()
           setTimeout(() => {
             this.$confetti.stop()
-          }, this.confetti);
+          }, 1000);
         }
         this.lastLength = this.remaining
         localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
@@ -180,8 +179,6 @@ export default {
       <button class="clear-completed" @click="removeCompleted" v-show="todos.length > remaining">
         Clear completed
       </button>
-      <br /><br /><br />
-      Confetti Amount: <input type="range" v-model="confetti" min="500" max="5000">
     </footer>
   </section>
 </template>
